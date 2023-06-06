@@ -25,6 +25,7 @@ pipeline {
     stages {
         stage('Install dependencies') {
             steps {
+                sh 'make clean'
                 sh 'make install'
             }
         }
