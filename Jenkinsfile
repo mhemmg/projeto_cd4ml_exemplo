@@ -30,8 +30,7 @@ pipeline {
         }
         stage('Run tests') {
             steps {
-                // sh './run_tests.sh'
-                sh 'echo run tests'
+                sh 'make test'
             }
         }
         stage('Run ML pipeline') {

@@ -36,7 +36,8 @@ clean:
 
 ## Lint using flake8
 lint:
-	flake8 src
+	# flake8 src
+	pylint --disable=R,C src
 
 ## Upload Data to S3
 sync_data_to_s3:
@@ -142,3 +143,10 @@ help:
 		printf "\n"; \
 	}' \
 	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
+
+#################################################################################
+# Test
+#################################################################################
+
+test:
+	python3 -m pytest -v tests/test*.py
