@@ -145,6 +145,16 @@ help:
 	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
 
 #################################################################################
+# Install
+#################################################################################
+
+install:
+	pip install --upgrade pip && pip install -r requirements.txt
+	pip uninstall app_src-0.1.0-py3-none-any.whl
+	python3 setup.py bdist bdist_wheel
+	pip install dist/app_src-0.1.0-py3-none-any.whl
+
+#################################################################################
 # Test
 #################################################################################
 
