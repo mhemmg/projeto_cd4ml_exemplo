@@ -2,7 +2,8 @@ import os
 
 from src.data.download_dataset import Download
 
-data_raw_path = 'data/raw'
+absolute_path = os.path.abspath('')
+data_raw_path = os.path.join(absolute_path, 'data/raw')
 
 def test_download_dataset():
 
