@@ -26,6 +26,7 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh 'make clean'
+                sh 'make create_dir'
                 sh 'make install'
             }
         }

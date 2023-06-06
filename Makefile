@@ -145,14 +145,24 @@ help:
 	| more $(shell test $(shell uname) = Darwin && echo '--no-init --raw-control-chars')
 
 #################################################################################
+# data directory
+#################################################################################
+
+create_dir:
+	mkdir -p data/raw
+	mkdir -p data/external
+	mkdir -p data/interim
+	mkdir -p data/processed
+
+#################################################################################
 # Install
 #################################################################################
 
 install:
-	pip install --upgrade pip && pip install -r requirements.txt
-	pip uninstall app_src-0.1.0-py3-none-any.whl
-	# python3 setup.py bdist bdist_wheel
-	# pip install dist/src-0.1.0-py3-none-any.whl
+	pip3 install --upgrade pip && pip3 install -r requirements.txt
+	pip3 uninstall app_src-0.1.0-py3-none-any.whl
+	python3 setup.py bdist bdist_wheel
+	pip3 install dist/src-0.1.0-py3-none-any.whl
 				
 
 #################################################################################

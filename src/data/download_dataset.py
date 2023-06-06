@@ -9,7 +9,7 @@ class Download():
     def download(self):
 
         path = self.destination_path
-        response = urllib.request.urlretrieve("https://www.opennn.net/files/breast_cancer.csv", os.path.join(path, "breast_cancer.csv"))
-
+        response = urllib.request.urlretrieve("https://www.opennn.net/files/breast_cancer.csv", 
+                                              os.path.join(path, "breast_cancer.csv"))
         return response
 
