@@ -160,4 +160,4 @@ install:
 #################################################################################
 
 test:
-	python3 -m pytest -v tests/test*.py
+	python3 -m pytest -v --cov=src --cov-report=term-missing --cov-report=html tests/test*.py
