@@ -160,7 +160,7 @@ create_dir:
 
 install:
 	pip3 install --upgrade pip && pip3 install -r requirements.txt
-	pip3 uninstall app_src-0.1.0-py3-none-any.whl
+	pip3 uninstall src-0.1.0-py3-none-any.whl -y
 	python3 setup.py bdist bdist_wheel
 	pip3 install dist/src-0.1.0-py3-none-any.whl
 				
