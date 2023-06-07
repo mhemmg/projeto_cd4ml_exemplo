@@ -171,3 +171,10 @@ install:
 
 test:
 	python3 -m pytest -v --cov=src --cov-report=term-missing --cov-report=html tests/test*.py
+
+#################################################################################
+# Run pipeline
+#################################################################################
+
+run:
+	python3 src/pipeline/run_pipeline.py
