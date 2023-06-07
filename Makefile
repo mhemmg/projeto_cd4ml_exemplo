@@ -37,7 +37,7 @@ clean:
 ## Lint using flake8
 lint:
 	# flake8 src
-	pylint --disable=R,C src
+	python3 -m pylint --disable=R,C src
 
 ## Upload Data to S3
 sync_data_to_s3:
