@@ -38,7 +38,7 @@ X_train, X_test, y_train, y_test = train_model.split_data()
 # Tracking
 
 remote_server_uri = "http://192.168.68.52:12000/" # this value has been replaced
-mlflow.set_tracking_uri(remote_server_uri)
+mlflow.set_tracking_uri(uri=emote_server_uri)
 mlflow.set_experiment(experiment_name='projeto_cd4ml_exemplo')
 
 tags = {
@@ -82,7 +82,7 @@ with mlflow.start_run():
     mlflow.log_metric("roc_auc", roc_auc)
 
     predictions = classifier.predict(X_train)
-    # signature = infer_signature(X_train, predictions)
+    signature = infer_signature(X_train, predictions)
 
     # tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
@@ -94,8 +94,8 @@ with mlflow.start_run():
     #     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
     mlflow.sklearn.log_model(classifier, 
                                  "model", 
-                                 registered_model_name="RandomForestClassifierBreastCancerModel")
-                                #  signature=signature)
+                                 registered_model_name="RandomForestClassifierBreastCancerModel",
+                                 signature=signature)
     # else:
     # mlflow.sklearn.log_model(classifier, "model") #, signature=signature)
 
