@@ -92,10 +92,13 @@ with mlflow.start_run():
     #     # There are other ways to use the Model Registry, which depends on the use case,
     #     # please refer to the doc for more information:
     #     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-    mlflow.sklearn.log_model(classifier, 
-                                 "model", 
-                                 registered_model_name="RandomForestClassifierBreastCancerModel",
-                                 signature=signature)
+    mlflow.log_artifacts("data", artifact_path="states")
+    # mlflow.sklearn.log_model(classifier, 
+    #                              "model", 
+    #                              registered_model_name="RandomForestClassifierBreastCancerModel",
+    #                              signature=signature)
     # else:
     # mlflow.sklearn.log_model(classifier, "model") #, signature=signature)
+
+
 
