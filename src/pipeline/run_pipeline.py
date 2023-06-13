@@ -93,10 +93,15 @@ with mlflow.start_run():
     #     # please refer to the doc for more information:
     #     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
     
-    mlflow.sklearn.log_model(classifier, 
-                                 "model", 
-                                 registered_model_name="RandomForestClassifierBreastCancerModel",
-                                 signature=signature)
+    # mlflow.sklearn.log_model(classifier, 
+    #                              "model", 
+    #                              registered_model_name="RandomForestClassifierBreastCancerModel",
+    #                              signature=signature)
+
+    mlflow.sklearn.save_model(classifier,
+                              'model_RandomForestClassifierBreastCancerModel',
+                              serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_PICKLE,
+                              signature=signature)
     # else:
     # mlflow.sklearn.log_model(classifier, "model") #, signature=signature)
 
