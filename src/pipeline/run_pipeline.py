@@ -99,7 +99,7 @@ with mlflow.start_run():
     #                              signature=signature)
 
     mlflow.sklearn.save_model(classifier,
-                              'model_RandomForestClassifierBreastCancerModel',
+                              '/mnt/mlflow/',
                               serialization_format=mlflow.sklearn.SERIALIZATION_FORMAT_PICKLE,
                               signature=signature)
     # else:
