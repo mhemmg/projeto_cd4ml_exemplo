@@ -37,7 +37,9 @@ X_train, X_test, y_train, y_test = train_model.split_data()
 
 # Tracking
 
-remote_server_uri = "http://192.168.68.52:12000/" # this value has been replaced
+#MH remote_server_uri = "http://192.168.68.52:12000/" # this value has been replaced
+remote_server_uri = "http://10.56.80.20:12000" # this value has been replaced
+
 mlflow.set_tracking_uri(uri=remote_server_uri)
 mlflow.set_experiment(experiment_name='projeto_cd4ml_exemplo')
 
